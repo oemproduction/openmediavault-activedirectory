@@ -1,0 +1,14 @@
+Source: openmediavault-activedirectory
+Section: admin
+Maintainer: Jason Lo <jason@oemproduction.com>
+Version: 7.0.1
+Standards-Version: 4.6.2
+Build-Depends: debhelper (>= 13)
+
+Package: openmediavault-activedirectory
+Architecture: all
+Depends: openmediavault (>= 7.0), samba, krb5-user, winbind, libnss-winbind
+Priority: optional
+Description: OpenMediaVault Active Directory plugin
+ Plugin to integrate OpenMediaVault with Active Directory for user authentication using Kerberos and Winbind.
+

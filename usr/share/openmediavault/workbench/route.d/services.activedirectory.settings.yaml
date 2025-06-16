@@ -1,0 +1,7 @@
+version: "1.0"
+type: route
+data:
+  url: "/services/activedirectory"
+  title: _("Active Directory")
+  component: omv-services-activedirectory-settings-form-page
+

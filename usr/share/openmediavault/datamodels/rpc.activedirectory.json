@@ -1,0 +1,71 @@
+[{
+	"type": "rpc",
+	"id": "rpc.activedirectory.set",
+	"params":{
+		"type": "object",
+		"properties": {
+			"enable": {
+				"type": "boolean",
+                "required": true
+			},
+			"hostname": {
+				"type": "string",
+				"pattern": "^$|^[a-zA-Z0-9]([a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(\\.[a-zA-Z0-9]([a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$",
+                "required": true
+			},
+			"domain": {
+				"type": "string",
+				"pattern": "^$|^[a-zA-Z0-9]([a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(\\.[a-zA-Z0-9]([a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+$",
+                "required": true
+			},
+			"workgroup": {
+				"type": "string",
+				"pattern": "^$|^[a-zA-Z0-9]([a-zA-Z0-9-]{0,14})$",
+                "required": true
+			},
+			"adminuser": {
+				"type": "string",
+                "required": true
+			},
+			"adminpw": {
+				"type": "string",
+                "required": true
+			},
+			"idstart": {
+				"type": "integer",
+				"minimum": 1000,
+				"maximum": 60000,
+                "required": true
+			},
+			"idend": {
+				"type": "integer",
+				"minimum": 1000,
+                "maximum": 60000,
+                "required": true
+			},
+			"cachetime": {
+				"type": "integer",
+				"minimum": 0,
+                "required": true
+			},
+			"mapuntrusted": {
+				"type": "boolean",
+                "required": true
+			},
+			"rpconly": {
+				"type": "boolean",
+                "required": true
+			},
+			"ticketlife": {
+				"type": "integer",
+				"minimum": 0,
+                "required": true
+			},
+			"renewlife": {
+				"type": "string",
+				"pattern": "^$|^[0-9]+[smhdw]$",
+                "required": true
+			}
+		}
+	}
+}]

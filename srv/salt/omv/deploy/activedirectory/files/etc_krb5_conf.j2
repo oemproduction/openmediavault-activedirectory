@@ -1,0 +1,20 @@
+{% set config = salt['omv_conf.get']('conf.service.activedirectory') %}
+[libdefaults]
+default_realm = {{ config.domain }}
+ticket_lifetime = {{ config.ticketlife }}
+dns_lookup_realm = yes
+dns_lookup_kdc = yes
+renew_lifetime = {{ config.renewlife }}
+
+[realms]
+{{ config.domain }} = {
+   kdc = {{ config.hostname }}
+   admin_server = {{ config.hostname }}
+}
+[kdc]
+profile = /etc/krb5kdc/kdc.conf
+
+[logging]
+kdc = FILE:/var/log/krb5kdc.log
+admin_server = FILE:/var/log/kadmin.log
+default = FILE:/var/log/krb5lib.log

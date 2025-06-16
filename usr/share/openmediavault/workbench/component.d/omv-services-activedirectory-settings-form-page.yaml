@@ -1,0 +1,106 @@
+version: "1.0"
+type: component
+data:
+  name: omv-services-activedirectory-settings-form-page
+  type: formPage
+  config:
+    request:
+      service: ActiveDirectory
+      get:
+        method: getSettings
+      post:
+        method: setSettings
+    fields:
+      - type: checkbox
+        name: enable
+        label: _("Enable")
+        value: false
+      - type: textInput
+        name: hostname
+        label: _("Domain Controller FQDN")
+        hint: _("Domain controller hostname (e.g., dc1.example.local)")
+        validators:
+          requiredIf:
+            enable: true
+      - type: textInput
+        name: domain
+        label: _("Domain/Realm")
+        hint: _("Active Directory domain (e.g., example.local)")
+        validators:
+          requiredIf:
+            enable: true
+      - type: textInput
+        name: workgroup
+        label: _("Workgroup")
+        hint: _("Your Domain Workgroup (e.g. EXAMPLE). Warning! Do not change the workgroup field inside the SMB settings if this plugin is enabled!")
+        validators:
+          requiredIf:
+            enable: true
+      - type: textInput
+        name: adminuser
+        label: _("Administrator Username")
+        hint: _("The Active Directory Administrator Username")
+        validators:
+          required: true
+      - type: passwordInput
+        name: adminpw
+        label: _("Administrator Password")
+        hint: _("The Active Directory Administrator Password")
+        validators:
+          required: true
+      - type: divider
+        title: _("Winbind Settings")
+      - type: container
+        fields:
+          - type: numberInput
+            name: idstart
+            label: _("UID/GID Range Start")
+            hint: _("The starting number to use for the UID/GID for your Active Directory users/groups")
+            validators:
+              min: 1000
+              max: 60000
+              required: true
+          - type: numberInput
+            name: idend
+            label: _("UID/GID Range End")
+            hint: _("The ending number to use for the UID/GID for your Active Directory users/groups")
+            validators:
+              min: 1000
+              max: 60000
+              required: true
+      - type: numberInput
+        name: cachetime
+        label: _("Winbind Cache Time")
+        hint: _("The number of seconds the winbind daemon will cache user and group information before querying a Windows NT server again.")
+        validators:
+          required: true
+      - type: checkbox
+        name: mapuntrusted
+        label: _("Map Untrusted To Domain")
+        hint: _("Enable to allow logins without prefixing usernames with the domain for systems that are not part of the domain.")
+        value: false
+      - type: checkbox
+        name: rpconly
+        label: _("Winbind Use RPC Only")
+        hint: _("Forces winbindd to use RPC instead of LDAP to retrieve information from Domain Controllers.")
+        value: false
+      - type: divider
+        title: _("Kerberos Settings")
+      - type: numberInput
+        name: ticketlife
+        label: _("Kerberos Ticket Lifetime")
+        hint: _("Sets the default lifetime for initial ticket requests")
+        validators:
+          required: true
+      - type: textInput
+        name: renewlife
+        label: _("Kerberos Renew Lifetime")
+        hint: _("Sets the default renewable lifetime for initial ticket requests")
+        validators:
+          required: true
+    buttons:
+      - template: submit
+      - template: cancel
+        execute:
+          type: url
+          url: "/services/activedirectory"

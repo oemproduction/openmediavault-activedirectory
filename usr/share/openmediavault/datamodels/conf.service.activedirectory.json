@@ -1,0 +1,59 @@
+{
+    "type": "config",
+    "id": "conf.service.activedirectory",
+    "title": "Active Directory",
+    "queryinfo": {
+        "xpath": "//services/activedirectory",
+        "iterable": false
+    },
+    "properties": {
+        "enable": {
+            "type": "boolean",
+            "default": false
+        },
+        "hostname": {
+            "type": "string",
+            "default": ""
+        },
+        "domain": {
+            "type": "string",
+            "default": ""
+        },
+        "adminuser": {
+            "type": "string",
+            "default": ""
+        },
+        "adminpw": {
+            "type": "string",
+            "default": ""
+        },
+        "idstart": {
+            "type": "integer",
+            "default": 10000
+        },
+        "idend": {
+            "type": "integer",
+            "default": 60000
+        },
+        "cachetime": {
+            "type": "integer",
+            "default": 3600
+        },
+        "mapuntrusted": {
+            "type": "boolean",
+            "default": true
+        },
+        "rpconly": {
+            "type": "boolean",
+            "default": true
+        },
+        "ticketlife": {
+            "type": "integer",
+            "default": 600
+        },
+        "renewlife": {
+            "type": "string",
+            "default": "7d"
+        }
+    }
+}

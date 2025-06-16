@@ -1,0 +1,8 @@
+version: "1.0"
+type: navigation-item
+data:
+  path: "services.activedirectory"
+  text: _("Active Directory")
+  icon: "mdi:lan-connect" 
+  url: "/services/activedirectory"
+
