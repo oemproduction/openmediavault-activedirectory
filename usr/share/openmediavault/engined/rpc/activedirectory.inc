@@ -30,8 +30,8 @@ class OMVRpcServiceActiveDirectory extends \OMV\Rpc\ServiceAbstract {
      * Initialize the RPC service methods.
      */
     public function initialize() {
-        $this->registerMethod("getSettings");
-        $this->registerMethod("setSettings");
+        $this->registerMethod("get");
+        $this->registerMethod("set");
     }
 
     /**
@@ -40,7 +40,7 @@ class OMVRpcServiceActiveDirectory extends \OMV\Rpc\ServiceAbstract {
      * @param array $context The context of the caller.
      * @return array The configuration object.
      */
-    public function getSettings($params, $context) {
+    public function get($params, $context) {
         $this->validateMethodContext($context, ["role" => OMV_ROLE_ADMINISTRATOR]);
         $db = \OMV\Config\Database::getInstance();
         // Get Active Directory settings
@@ -49,7 +49,7 @@ class OMVRpcServiceActiveDirectory extends \OMV\Rpc\ServiceAbstract {
         // Get Samba workgroup
         $smbObject = $db->get("conf.service.smb");
         $smbSettings = $smbObject->getAssoc();
-        // Append Samba workgroup to AD settings
+         Append Samba workgroup to AD settings
         $adSettings["workgroup"] = $smbSettings["workgroup"];
         return $adSettings;
     }
@@ -60,7 +60,7 @@ class OMVRpcServiceActiveDirectory extends \OMV\Rpc\ServiceAbstract {
      * @param array $context The context of the caller.
      * @return array The configuration object.
      */
-    public function setSettings($params, $context) {
+    public function set($params, $context) {
         // Validate the RPC caller context.
 		$this->validateMethodContext($context, [
 			"role" => OMV_ROLE_ADMINISTRATOR
@@ -80,7 +80,7 @@ class OMVRpcServiceActiveDirectory extends \OMV\Rpc\ServiceAbstract {
             "idstart" => $params["idstart"],
             "idend" => $params["idend"],
             "cachetime" => $params["cachetime"],
-            "mapuntrusted" => $params["mapuntrusted"],
+            "defaultdomain" => $params["defaultdomain"],
             "rpconly" => $params["rpconly"],
             "ticketlife" => $params["ticketlife"],
             "renewlife" => $params["renewlife"]

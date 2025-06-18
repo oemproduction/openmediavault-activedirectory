@@ -7,9 +7,9 @@ data:
     request:
       service: ActiveDirectory
       get:
-        method: getSettings
+        method: get
       post:
-        method: setSettings
+        method: set
     fields:
       - type: checkbox
         name: enable

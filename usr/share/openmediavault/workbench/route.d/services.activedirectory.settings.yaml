@@ -3,5 +3,6 @@ type: route
 data:
   url: "/services/activedirectory"
   title: _("Active Directory")
+  editing: true
+  notificationTitle: _("Updated Active Directory settings.")
   component: omv-services-activedirectory-settings-form-page
-
