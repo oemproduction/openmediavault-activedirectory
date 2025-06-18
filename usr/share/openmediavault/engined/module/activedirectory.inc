@@ -3,8 +3,7 @@
  * This file is part of OpenMediaVault.
  *
  * @license   http://www.gnu.org/licenses/gpl.html GPL Version 3
- * @author    Your Name <your.email@example.com>
- * @copyright Copyright (c) 2025 Your Name
+ * @author    Jason Lo <jason@oemproduction.com>
  *
  * OpenMediaVault is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -16,22 +15,14 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
  */
-class OMVModuleActiveDirectory extends \OMV\Engine\Module\ServiceAbstract
-		implements \OMV\Engine\Notify\IListener {
+class ActiveDirectory extends \OMV\Engine\Module\ServiceAbstract
+		implements \OMV\Engine\Notify\IListener, \OMV\Engine\Module\IServiceStatus {
 	/**
 	 * Get the module name.
 	 */
 	public function getName() {
 		return "activedirectory";
 	}
-
-    /**
-	 * Defines the modules that should be deployed after this module.
-	 * @return array
-	 */
-	//public function deployAfter(): array {
-	//	return ["smb"];
-	//}
 
 	/**
 	 * Get the module status.

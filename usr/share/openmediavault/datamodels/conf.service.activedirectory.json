@@ -39,7 +39,7 @@
             "type": "integer",
             "default": 3600
         },
-        "mapuntrusted": {
+        "defaultdomain": {
             "type": "boolean",
             "default": true
         },

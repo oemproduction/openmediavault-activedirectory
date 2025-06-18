@@ -1,4 +1,3 @@
-{% set config = salt['omv_conf.get']('conf.service.activedirectory') %}
 [libdefaults]
 default_realm = {{ config.domain }}
 ticket_lifetime = {{ config.ticketlife }}

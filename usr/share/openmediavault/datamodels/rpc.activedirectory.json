@@ -48,7 +48,7 @@
 				"minimum": 0,
                 "required": true
 			},
-			"mapuntrusted": {
+			"defaultdomain": {
 				"type": "boolean",
                 "required": true
 			},

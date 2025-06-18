@@ -3,8 +3,7 @@
 # This file is part of OpenMediaVault.
 #
 # @license   http://www.gnu.org/licenses/gpl.html GPL Version 3
-# @author    Your Name <your.email@example.com>
-# @copyright Copyright (c) 2025 Your Name
+# @author    Jason Lo <jason@oemproduction.com>
 #
 # OpenMediaVault is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -31,13 +30,13 @@ set -e
 #       <domain></domain>
 #       <adminuser></adminuser>
 #       <adminpw></adminpw>
-#       <idstart>1000</idstart>
+#       <idstart>10000</idstart>
 #       <idend>60000</idend>
-#       <cachetime>0</cachetime>
-#       <mapuntrusted>0</mapuntrusted>
-#       <rpconly>0</rpconly>
-#       <ticketlife>0</ticketlife>
-#       <renewlife></renewlife>
+#       <cachetime>3600</cachetime>
+#       <defaultdomain>1</defaultdomain>
+#       <rpconly>1</rpconly>
+#       <ticketlife>600</ticketlife>
+#       <renewlife>7d</renewlife>
 #     </activedirectory>
 #   </services>
 # </config>

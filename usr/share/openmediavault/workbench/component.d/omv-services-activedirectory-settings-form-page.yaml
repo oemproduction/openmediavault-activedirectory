@@ -32,7 +32,7 @@ data:
       - type: textInput
         name: workgroup
         label: _("Workgroup")
-        hint: _("Your Domain Workgroup (e.g. EXAMPLE). Warning! Do not change the workgroup field inside the SMB settings if this plugin is enabled!")
+        hint: _("Your Domain Workgroup (e.g. EXAMPLE).")
         validators:
           requiredIf:
             enable: true
@@ -75,9 +75,9 @@ data:
         validators:
           required: true
       - type: checkbox
-        name: mapuntrusted
-        label: _("Map Untrusted To Domain")
-        hint: _("Enable to allow logins without prefixing usernames with the domain for systems that are not part of the domain.")
+        name: defaultdomain
+        label: _("Use Default Domain")
+        hint: _("This parameter controls whether the domain name is included as a prefix for users/groups.")
         value: false
       - type: checkbox
         name: rpconly
