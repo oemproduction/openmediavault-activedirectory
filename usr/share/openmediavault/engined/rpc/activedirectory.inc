@@ -49,7 +49,7 @@ class OMVRpcServiceActiveDirectory extends \OMV\Rpc\ServiceAbstract {
         // Get Samba workgroup
         $smbObject = $db->get("conf.service.smb");
         $smbSettings = $smbObject->getAssoc();
-         Append Samba workgroup to AD settings
+        // Append Samba workgroup to AD settings
         $adSettings["workgroup"] = $smbSettings["workgroup"];
         return $adSettings;
     }
@@ -98,4 +98,3 @@ class OMVRpcServiceActiveDirectory extends \OMV\Rpc\ServiceAbstract {
         return $assocArray;
     }
 }
-

@@ -57,4 +57,3 @@ class ActiveDirectory extends \OMV\Engine\Module\ServiceAbstract
             [$moduleMngr->getModule("samba"), "setDirty"]);
 	}
 }
-?>
